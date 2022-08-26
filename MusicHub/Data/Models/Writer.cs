@@ -1,35 +1,29 @@
 ﻿namespace MusicHub.Data.Models
 {
     using MusicHub.Common;
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
 
-    public class Producer
+    public class Writer
     {
-        public Producer()
+        public Writer()
         {
-            this.Albums = new HashSet<Album>();
+            this.Songs = new HashSet<Song>();
         }
 
         [Key]
         public int Id { get; set; }
 
         
-
         [Required]
-        [MaxLength(GlobalConstants.ProducerNameMaxLength)]
+        [MaxLength(GlobalConstants.WriterNameMaxLength)]
         public string Name { get; set; }
 
         
         public string Pseudonym { get; set; }
 
-       
-        public string PhoneNumber { get; set; }
-
         
+        public virtual ICollection<Song> Songs { get; set; }
 
-        public virtual ICollection<Album> Albums { get; set; }
     }
 }

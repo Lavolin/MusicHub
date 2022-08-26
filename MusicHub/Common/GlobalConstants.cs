@@ -18,6 +18,9 @@ namespace MusicHub.Common
         //Producer
         public const int ProducerNameMaxLength = 30;
 
+        //Writer
+        public const int WriterNameMaxLength = 20;
+
 
 
     }
